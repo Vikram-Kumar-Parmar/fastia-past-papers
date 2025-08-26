@@ -1,0 +1,951 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 25%, #16213e 50%, #0f0f0f 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            background-size: cover;
+            filter: blur(40px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .orb-1 { width: 300px; height: 300px; top: 20%; left: 10%; animation-delay: 0s; background-image: url('https://via.placeholder.com/300/8b5cf6/000000?text=');}
+        .orb-2 { width: 200px; height: 200px; top: 60%; right: 20%; animation-delay: 2s; background-image: url('https://via.placeholder.com/200/06b6d4/000000?text=');}
+        .orb-3 { width: 250px; height: 250px; bottom: 20%; left: 30%; animation-delay: 4s; background-image: url('https://via.placeholder.com/250/ec4899/000000?text=');}
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        /* Landing Page Background Logo */
+        .landing-bg-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            opacity: 0.08;
+            z-index: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: backgroundLogoFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes backgroundLogoFloat {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.1); }
+        }
+
+        /* Landing Page */
+        .landing-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            position: relative;
+            margin-bottom: 3rem;
+            animation: logoGlow 3s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.5);
+        }
+        .logo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, #8b5cf6, transparent);
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5)); }
+            50% { filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.8)); }
+        }
+
+        .landing-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titlePulse 2s ease-in-out infinite;
+            z-index: 2;
+            position: relative;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .landing-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: #a1a1aa;
+            max-width: 600px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .get-started-btn {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            z-index: 2;
+        }
+
+        .get-started-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
+        }
+
+        .get-started-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .get-started-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .search-filter-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 25px;
+            color: white;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-bar::placeholder {
+            color: #a1a1aa;
+        }
+
+        .search-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .search-btn {
+            padding: 1rem;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-btn:hover, .search-btn.active {
+            background: rgba(139, 92, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .sort-toggle {
+            padding: 0.8rem 1.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sort-toggle:hover {
+            background: rgba(139, 92, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(139, 92, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .course-description {
+            color: #a1a1aa;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .get-stuff-btn {
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .get-stuff-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Course Materials Page */
+        .course-materials {
+            display: none;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-materials.active {
+            display: block;
+        }
+
+        .back-btn {
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(139, 92, 246, 0.5);
+        }
+
+        .materials-chain {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .material-node {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            min-width: 150px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .material-node:hover {
+            transform: scale(1.05);
+            border-color: rgba(139, 92, 246, 0.8);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .material-node::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            transform: translateY(-50%);
+        }
+
+        .material-node:last-child::after {
+            display: none;
+        }
+
+        .material-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .material-desc {
+            font-size: 0.9rem;
+            color: #a1a1aa;
+        }
+
+        /* Fancy Missing Course Line */
+        /* Fancy Missing Course Button */
+        .missing-course-btn {
+            display: block;
+            width: fit-content;
+            margin: 4rem auto 0 auto;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899, #8b5cf6);
+            background-size: 200% auto;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .missing-course-btn:hover {
+            background-position: right center;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .missing-course-btn i {
+            margin-right: 0.75rem;
+        }
+
+        /* Optional: Add a subtle shine effect on hover */
+        .missing-course-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transition: 0.6s;
+        }
+
+        .missing-course-btn:hover::before {
+            left: 150%;
+        }
+
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+            }
+        }
+
+        /* Enhanced Footer */
+        
+/* --- New Footer & Popup CSS --- */
+.footer {
+    margin-top: 3rem;
+    padding: 2rem 2rem 1.5rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.3);
+    text-align: center;
+    position: relative;
+    background-color: #0f0f1a; /* Hides stars behind footer */
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+.social-links { display: flex; gap: 1.5rem; align-items: center; }
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    color: #a1a1aa;
+    transition: all 0.3s ease;
+}
+.social-link:hover {
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.2);
+    transform: translateY(-3px);
+}
+.about-me-btn {
+    background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+    border: none; padding: 0.8rem 2rem; border-radius: 25px;
+    color: white; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease;
+    animation: rgbGlow 2s ease-in-out infinite;
+}
+.about-me-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
+}
+@keyframes rgbGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.4); }
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+.footer-email, .footer-credit { color: #a1a1aa; font-size: 0.9rem; }
+.footer-credit { color: #666; }
+.footer-credit .heart { color: #ec4899; animation: heartbeat 1.5s ease-in-out infinite; }
+@keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        
+        /* About Me Popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+                .popup-content {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
+            /* Increased border-radius for a very smooth curve */
+            border-radius: 40px; 
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            backdrop-filter: blur(20px);
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            /* We add overflow: hidden to contain the new border element */
+            overflow: hidden; 
+            /* The old border properties are removed. We create a new "border" below. */
+        }
+
+        /* This ::before pseudo-element creates our new, reliable gradient border */
+        .popup-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Matching the parent's border-radius */
+            border-radius: 40px; 
+            /* Adding a 3px "padding" which acts as our border thickness */
+            padding: 3px; 
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+            /* This is a special CSS property to make the center transparent, revealing the parent background */
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            z-index: -1; /* Sits behind the main content */
+            animation: popupGlow 3s ease-in-out infinite;
+        }
+
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+
+        @keyframes popupGlow {
+            0%, 100% { 
+                box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2);
+            }
+            33% { 
+                box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.2);
+            }
+            66% { 
+                box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3), 0 0 40px rgba(236, 72, 153, 0.2);
+            }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+        }
+
+        .popup-close:hover {
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+        }
+
+        .popup-close::before,
+        .popup-close::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: white;
+            border-radius: 1px;
+        }
+
+        .popup-close::before {
+            transform: rotate(45deg);
+        }
+
+        .popup-close::after {
+            transform: rotate(-45deg);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* This is the container for the new animated outline */
+        .profile-image-outline {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 13px; /* Match the image's curve */
+            padding: 3px; /* This padding becomes the thickness of our outline */
+            overflow: hidden;
+        }
+
+        /* The animated gradient is applied to the ::before pseudo-element */
+        .profile-image-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4, #8b5cf6);
+            background-size: 300% 300%;
+            z-index: 1;
+            /* This is the animation that moves the RGB colors */
+            animation: rgb-move 3s ease-in-out infinite;
+        }
+
+        /* The actual image sits on top of the gradient */
+        .profile-image-outline img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 11px; /* Slightly smaller radius to fit inside the outline */
+            z-index: 2; /* Ensures it's above the ::before element */
+            display: block;
+        }
+
+        @keyframes imageRgbShadow {
+            0%   { box-shadow: 0 0 20px -5px #8b5cf6, inset 0 0 15px -10px #8b5cf6; }
+            33%  { box-shadow: 0 0 20px -5px #06b6d4, inset 0 0 15px -10px #06b6d4; }
+            66%  { box-shadow: 0 0 20px -5px #ec4899, inset 0 0 15px -10px #ec4899; }
+            100% { box-shadow: 0 0 20px -5px #8b5cf6, inset 0 0 15px -10px #8b5cf6; }
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899, #8b5cf6);
+            border-radius: 15px;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-info .title {
+            color: #06b6d4;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .profile-description {
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .education {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .education h3 {
+            color: #8b5cf6;
+            margin-bottom: 0.5rem;
+        }
+
+        .linkedin-btn {
+            background: linear-gradient(45deg, #0077b5, #00a0dc);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .linkedin-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 119, 181, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .landing-title {
+                font-size: 2.5rem;
+            }
+            
+            .landing-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .logo img {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .landing-bg-logo {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .materials-chain {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .material-node::after {
+                display: none;
+            }
+            
+            .search-filter-container {
+                flex-direction: column;
+            }
+
+            .search-controls {
+                order: 1;
+            }
+
+            .filter-controls {
+                order: 2;
+                justify-content: center;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .popup-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+        }
+
+        .campus-list {
+            display:block;
+            color: rgb(238, 238, 238);
+            font-size:0.85em;
+            margin: 0.3em 0;
+            opacity:0.8;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Loading animation */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(139, 92, 246, 0.3);
+            border-top: 4px solid #8b5cf6;
+            border-radius: 50%;
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .gradient-smiley .smiley-gradient-img {
+            display: inline-block;
+            width: 2.3rem;
+            height: 2.3rem;
+            vertical-align: middle;
+            background: url('https://em-content.zobj.net/source/microsoft-teams/363/smiling-face-with-smiling-eyes_1f60a.png') no-repeat center/contain;
+            border-radius: 50%;
+        }
+
+        /* it is the absolute background */
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Ensures it is the absolute background */
+        }
+        .landing-page, .dashboard, .course-materials, .footer {
+            position: relative;
+            z-index: 1; /* Ensures ALL your content appears ON TOP of the stars */
+        }
+        .popup-overlay { z-index: 1000; }

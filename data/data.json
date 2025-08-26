@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "title": "Object Oriented Programming (CS-2001)",
+        "description": "Comprehensive collection of OOP past papers, assignments, and lab materials covering inheritance, polymorphism, and design patterns.",
+        "materials": {
+            "lab": "https://github.com/vikram/oop-labs",
+            "assignments": "https://github.com/vikram/oop-assignments",
+            "quizzes": "https://github.com/vikram/oop-quizzes",
+            "sessional-1": "https://github.com/vikram/oop-sessional1",
+            "sessional-2": "https://github.com/vikram/oop-sessional2",
+            "finals": "https://github.com/vikram/oop-finals",
+            "books": "https://github.com/vikram/oop-books",
+            "outlines": "https://github.com/vikram/oop-outlines"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Data Structures & Algorithms (CS-2003)",
+        "description": "Complete study materials for DSA including sorting algorithms, tree structures, graph theory, and complexity analysis.",
+        "materials": {
+            "lab": "https://github.com/vikram/dsa-labs",
+            "assignments": "https://github.com/vikram/dsa-assignments",
+            "quizzes": "https://github.com/vikram/dsa-quizzes",
+            "sessional-1": "https://github.com/vikram/dsa-sessional1",
+            "sessional-2": "https://github.com/vikram/dsa-sessional2",
+            "finals": "https://github.com/vikram/dsa-finals",
+            "books": "https://github.com/vikram/dsa-books",
+            "outlines": "https://github.com/vikram/dsa-outlines"
+        }
+    },
+    {
+        "id": 3,
+        "title": "Database Systems (CS-3001)",
+        "description": "Database design, SQL queries, normalization, and DBMS concepts with practical implementations and past papers.",
+        "materials": {
+            "lab": "https://github.com/vikram/db-labs",
+            "assignments": "https://github.com/vikram/db-assignments",
+            "quizzes": "https://github.com/vikram/db-quizzes",
+            "sessional-1": "https://github.com/vikram/db-sessional1",
+            "sessional-2": "https://github.com/vikram/db-sessional2",
+            "finals": "https://github.com/vikram/db-finals",
+            "books": "https://github.com/vikram/db-books",
+            "outlines": "https://github.com/vikram/db-outlines"
+        }
+    },
+    {
+        "id": 4,
+        "title": "Software Engineering (CS-3005)",
+        "description": "Software development lifecycle, project management, testing methodologies, and system analysis resources.",
+        "materials": {
+            "lab": "https://github.com/vikram/se-labs",
+            "assignments": "https://github.com/vikram/se-assignments",
+            "quizzes": "https://github.com/vikram/se-quizzes",
+            "sessional-1": "https://github.com/vikram/se-sessional1",
+            "sessional-2": "https://github.com/vikram/se-sessional2",
+            "finals": "https://github.com/vikram/se-finals",
+            "books": "https://github.com/vikram/se-books",
+            "outlines": "https://github.com/vikram/se-outlines"
+        }
+    },
+    {
+        "id": 5,
+        "title": "Computer Networks (CS-3007)",
+        "description": "Network protocols, OSI model, TCP/IP, routing algorithms, and network security fundamentals with practical labs.",
+        "materials": {
+            "lab": "https://github.com/vikram/networks-labs",
+            "assignments": "https://github.com/vikram/networks-assignments",
+            "quizzes": "https://github.com/vikram/networks-quizzes",
+            "sessional-1": "https://github.com/vikram/networks-sessional1",
+            "sessional-2": "https://github.com/vikram/networks-sessional2",
+            "finals": "https://github.com/vikram/networks-finals",
+            "books": "https://github.com/vikram/networks-books",
+            "outlines": "https://github.com/vikram/networks-outlines"
+        }
+    },
+    {
+        "id": 6,
+        "title": "Operating Systems (CS-3009)",
+        "description": "Process management, memory allocation, file systems, and system calls with hands-on kernel programming.",
+        "materials": {
+            "lab": "https://github.com/vikram/os-labs",
+            "assignments": "https://github.com/vikram/os-assignments",
+            "quizzes": "https://github.com/vikram/os-quizzes",
+            "sessional-1": "https://github.com/vikram/os-sessional1",
+            "sessional-2": "https://github.com/vikram/os-sessional2",
+            "finals": "https://github.com/vikram/os-finals",
+            "books": "https://github.com/vikram/os-books",
+            "outlines": "https://github.com/vikram/os-outlines"
+        }
+    },
+    {
+        "id": 7,
+        "title": "Web Development (CS-4001)",
+        "description": "Modern web technologies including React, Node.js, databases, and full-stack development practices.",
+        "materials": {
+            "lab": "https://github.com/vikram/web-labs",
+            "assignments": "https://github.com/vikram/web-assignments",
+            "quizzes": "https://github.com/vikram/web-quizzes",
+            "sessional-1": "https://github.com/vikram/web-sessional1",
+            "sessional-2": "https://github.com/vikram/web-sessional2",
+            "finals": "https://github.com/vikram/web-finals",
+            "books": "https://github.com/vikram/web-books",
+            "outlines": "https://github.com/vikram/web-outlines"
+        }
+    },
+    {
+        "id": 8,
+        "title": "Artificial Intelligence (CS-4003)",
+        "description": "Machine learning algorithms, neural networks, expert systems, and AI programming with practical implementations.",
+        "materials": {
+            "lab": "https://github.com/vikram/ai-labs",
+            "assignments": "https://github.com/vikram/ai-assignments",
+            "quizzes": "https://github.com/vikram/ai-quizzes",
+            "sessional-1": "https://github.com/vikram/ai-sessional1",
+            "sessional-2": "https://github.com/vikram/ai-sessional2",
+            "finals": "https://github.com/vikram/ai-finals",
+            "books": "https://github.com/vikram/ai-books",
+            "outlines": "https://github.com/vikram/ai-outlines"
+        }
+    },
+    {
+        "id": 9,
+        "title": "Artificial Intelligence (CS-4003)",
+        "description": "Machine learning algorithms, neural networks, expert systems, and AI programming with practical implementations.",
+        "materials": {
+            "lab": "https://github.com/vikram/ai-labs",
+            "assignments": "https://github.com/vikram/ai-assignments",
+            "quizzes": "https://github.com/vikram/ai-quizzes",
+            "sessional-1": "https://github.com/vikram/ai-sessional1",
+            "sessional-2": "https://github.com/vikram/ai-sessional2",
+            "finals": "https://github.com/vikram/ai-finals",
+            "books": "https://github.com/vikram/ai-books",
+            "outlines": "https://github.com/vikram/ai-outlines"
+        }
+    },
+    {
+        "id": 10,
+        "title": "Artificial Intelligence (CS-4003)",
+        "description": "Machine learning algorithms, neural networks, expert systems, and AI programming with practical implementations.",
+        "materials": {
+            "lab": "https://github.com/vikram/ai-labs",
+            "assignments": "https://github.com/vikram/ai-assignments",
+            "quizzes": "https://github.com/vikram/ai-quizzes",
+            "sessional-1": "https://github.com/vikram/ai-sessional1",
+            "sessional-2": "https://github.com/vikram/ai-sessional2",
+            "finals": "https://github.com/vikram/ai-finals",
+            "books": "https://github.com/vikram/ai-books",
+            "outlines": "https://github.com/vikram/ai-outlines"
+        }
+    }
+]
